@@ -1,2 +1,2 @@
 # Assignment
-Java assignment to create a student management system
+Java code files to create a student management system for Katikamu Primary school
