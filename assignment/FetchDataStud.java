@@ -9,31 +9,31 @@ import java.sql.*;
 
 public class FetchDataStud implements ActionListener {
 
-    JFrame frame1;// creating object of first JFrame
-    JLabel nameLabel;// creating object of JLabel
-    JTextField nameTextField;// creating object of JTextfield
-    JButton fetchButton; // creating object of JButton
-    JButton resetButton; // creating object of JButton
+    JFrame frame1;              // creating object of first JFrame
+    JLabel nameLabel;           // creating object of JLabel
+    JTextField nameTextField;   // creating object of JTextfield
+    JButton fetchButton;        // creating object of JButton
+    JButton resetButton;        // creating object of JButton
 
-    JFrame frame2;// creating object of second JFrame
-    DefaultTableModel defaultTableModel;// creating object of DefaultTableModel
-    JTable table;// Creating object of JTable
-    Connection connection;// Creating object of Connection class
-    Statement statement;// Creating object of Statement class
+    JFrame frame2;                              // creating object of second JFrame
+    DefaultTableModel defaultTableModel;        // creating object of DefaultTableModel
+    JTable table;                               // Creating object of JTable
+    Connection connection;                      // Creating object of Connection class
+    Statement statement;                        // Creating object of Statement class
     int flag = 0;
 
     FetchDataStud() {
 
         frame1 = new JFrame();
-        frame1.setTitle("Search Database");// setting the title of first JFrame
-        frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// setting default close operation
-        GridBagLayout bagLayout = new GridBagLayout();// creating object of GridBagLayout
-        GridBagConstraints bagConstraints = new GridBagConstraints();// creating object of GridBagConstratints
-        frame1.setSize(500, 300);// setting the size of first JFrame
-        frame1.setLayout(bagLayout);// setting the layout to GridBagLayout of first JFrame
+        frame1.setTitle("Search Database");                              // setting the title of first JFrame
+        frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);          // setting default close operation
+        GridBagLayout bagLayout = new GridBagLayout();                  // creating object of GridBagLayout
+        GridBagConstraints bagConstraints = new GridBagConstraints();   // creating object of GridBagConstratints
+        frame1.setSize(500, 300);                                       // setting the size of first JFrame
+        frame1.setLayout(bagLayout);                                    // setting the layout to GridBagLayout of first JFrame
 
-        bagConstraints.insets = new Insets(15, 40, 0, 0);// Setting the padding between the components and neighboring
-                                                         // components
+        bagConstraints.insets = new Insets(15, 40, 0, 0);               // Setting the padding between the components and neighboring
+                                                                        // components
 
         // Setting the property of JLabel and adding it to the first JFrame
         nameLabel = new JLabel("Enter Reg no");
@@ -65,8 +65,8 @@ public class FetchDataStud implements ActionListener {
         fetchButton.addActionListener(this);
         resetButton.addActionListener(this);
 
-        frame1.setVisible(true);// Setting the visibility of First JFrame
-        frame1.validate();// Performing relayout of the First JFrame
+        frame1.setVisible(true);        // Setting the visibility of First JFrame
+        frame1.validate();              // Performing relayout of the First JFrame
 
     }
 
@@ -79,9 +79,9 @@ public class FetchDataStud implements ActionListener {
 
         if (e.getSource() == fetchButton) {
 
-            String userName = nameTextField.getText().toString();// getting text of username text field and storing it
-                                                                 // in a String variable
-            frameSecond(userName);// passing the text value to frameSecond method
+            String userName = nameTextField.getText().toString();       // getting text of username text field and storing it
+                                                                        // in a String variable
+            frameSecond(userName);                                      // passing the text value to frameSecond method
 
         }
         if (e.getSource() == resetButton) {
@@ -161,7 +161,7 @@ public class FetchDataStud implements ActionListener {
                 // break;
                 // }
 
-                JOptionPane.showMessageDialog(null, "No Such  Registration is  Found");// When invalid
+                JOptionPane.showMessageDialog(null, "No Record Found");// When invalid
                 // subject is entered
             }
 
